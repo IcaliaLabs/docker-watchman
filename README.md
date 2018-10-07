@@ -15,20 +15,23 @@ Dockerfile" feature to copy the watchman executable directly from our image!
 ## Recommended use case for Alpine-based images:
 
 ```
-# 1: Start from whatever image you are using - this is a node app example:
+# Start from whatever image you are using - this is a node app example:
 FROM node:8-alpine
 
-# 2: Install the packages required for watchman to work properly:
+# Install the packages required for watchman to work properly:
 RUN apk add --no-cache libcrypto1.0 libgcc libstdc++
 
-# 3: Copy the watchman executable binary, workdir and documentation (optional)
-# directly from our image:
-COPY --from=builder /usr/local/bin/watchman* /usr/local/bin/
-COPY --from=builder /usr/local/var/run/watchman /usr/local/var/run/watchman
-COPY --from=builder /usr/local/share/doc/watchman-4.9.0 /usr/local/share/doc/watchman-4.9.0
+# Copy the watchman executable binary directly from our image:
+COPY --from=icalialabs/watchman:4-alpine3.4 /usr/local/bin/watchman* /usr/local/bin/
 
-# 4: Continue with the rest of your Dockerfile:
-COPY package.json /usr/src/
+# Create the watchman STATEDIR directory:
+RUN mkdir -p /usr/local/var/run/watchman \
+ && touch /usr/local/var/run/watchman/.not-empty
+
+# (Optional) Copy the compiled watchman documentation:
+COPY --from=icalialabs/watchman:4-alpine3.4 /usr/local/share/doc/watchman* /usr/local/share/doc/
+
+# Continue with the rest of your Dockerfile...
 ```
 
 ## References
