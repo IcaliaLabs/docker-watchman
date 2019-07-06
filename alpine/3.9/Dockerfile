@@ -1,10 +1,10 @@
 # Stage I: Runtime =============================================================
 
-# Step 1: Begin with Alpine 3.8:
-FROM alpine:3.8 AS runtime
+# Step 1: Begin with Alpine 3.9:
+FROM alpine:3.9 AS runtime
 
 # Step 2: Install watchman runtime dependencies:
-RUN apk add --no-cache libcrypto1.0 libgcc libstdc++
+RUN apk add --no-cache libcrypto1.1 libgcc libstdc++
 
 # Stage II: Builder ============================================================
 
@@ -39,7 +39,7 @@ RUN cd /tmp \
 # Step 8: Build watchman from source:
 RUN cd /tmp/watchman-${WATCHMAN_VERSION} \
  && ./autogen.sh \
- && ./configure \
+ && ./configure --enable-lenient \
  && make \
  && make install \
  && cd $HOME \
