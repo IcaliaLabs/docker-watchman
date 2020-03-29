@@ -1,4 +1,4 @@
-# Facebook's Watchman for Docker Containers (Alpine)
+# Facebook's Watchman for Docker Containers
 
 [Watchman](https://facebook.github.io/watchman/) is a file watching service
 developed by Facebook, and it's used by many projects (like Ember CLI) to watch
@@ -9,10 +9,11 @@ compilation times when building your Dockerfiles - you can use the "Multi-stage
 Dockerfile" feature to copy the watchman executable directly from our image!
 
 ## Supported tags and respective Dockerfile links
-- 4.9.0-alpine3.8, 4.9.0-alpine, 4.9-alpine3.8, 4.9-alpine, 4-alpine, 4, latest ([alpine/3.8/Dockerfile](https://github.com/IcaliaLabs/docker-watchman/master/blob/alpine/3.8/Dockerfile))
-- 4.9.0-alpine3.4, 4.9-alpine3.4, 4-alpine3.4 ([alpine/3.4/Dockerfile](https://github.com/IcaliaLabs/docker-watchman/master/blob/alpine/3.4/Dockerfile))
+- [4.9.0-alpine3.8, 4.9.0-alpine, 4.9-alpine3.8, 4.9-alpine, 4-alpine, 4, latest](https://github.com/IcaliaLabs/docker-watchman/master/blob/alpine/3.8/Dockerfile)
+- [4.9.0-alpine3.4, 4.9-alpine3.4, 4-alpine3.4](https://github.com/IcaliaLabs/docker-watchman/master/blob/alpine/3.4/Dockerfile)
+- [debian, buster](https://github.com/IcaliaLabs/docker-watchman/master/blob/debian/buster/Dockerfile)
 
-## Recommended use case for Alpine-based images:
+## Recommended usage on Alpine-based images:
 
 ```
 # Start from whatever image you are using - this is a node app example:
