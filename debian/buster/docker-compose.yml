@@ -1,0 +1,24 @@
+version: "3.7"
+
+services:
+  runtime:
+    image: icalialabs/watchman:buster-runtime
+    build: &build_config
+      context: .
+      target: runtime
+  builder:
+    image: icalialabs/watchman:buster-builder
+    build: 
+      <<: *build_config
+      target: builder
+  release:
+    image: icalialabs/watchman:buster
+    build:
+      <<: *build_config
+      target: release
+    volumes:
+      - ../..:/usr/src # Mount the whole project to do some tests...
+    working_dir: /usr/src
+    stdin_open: true
+    tty: true
+    command: watchman --foreground --log-level 2 watch /usr/src/
