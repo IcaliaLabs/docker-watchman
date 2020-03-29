@@ -9,9 +9,9 @@ compilation times when building your Dockerfiles - you can use the "Multi-stage
 Dockerfile" feature to copy the watchman executable directly from our image!
 
 ## Supported tags and respective Dockerfile links
-- [4.9.0-alpine3.8, 4.9.0-alpine, 4.9-alpine3.8, 4.9-alpine, 4-alpine, 4, latest](https://github.com/IcaliaLabs/docker-watchman/master/blob/alpine/3.8/Dockerfile)
-- [4.9.0-alpine3.4, 4.9-alpine3.4, 4-alpine3.4](https://github.com/IcaliaLabs/docker-watchman/master/blob/alpine/3.4/Dockerfile)
-- [debian, buster](https://github.com/IcaliaLabs/docker-watchman/master/blob/debian/buster/Dockerfile)
+- [4.9.0-alpine3.8, 4.9.0-alpine, 4.9-alpine3.8, 4.9-alpine, 4-alpine, 4, latest](https://github.com/IcaliaLabs/docker-watchman/blob/master/alpine/3.8/Dockerfile)
+- [4.9.0-alpine3.4, 4.9-alpine3.4, 4-alpine3.4](https://github.com/IcaliaLabs/docker-watchman/blob/master/alpine/3.4/Dockerfile)
+- [debian, buster](https://github.com/IcaliaLabs/docker-watchman/blob/master/debian/buster/Dockerfile)
 
 ## Recommended usage on Alpine-based images:
 
